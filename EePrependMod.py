@@ -39,7 +39,10 @@ class EePrependModCommand(sublime_plugin.TextCommand):
         root_path = '/'.join(paths[:split_folder_index] + [f'ee/{split_folder_name}/'])
 
         if split_folder_name == 'app':
-            self.prepended_module_path = root_path + '/'.join([paths[split_folder_index + 1], 'ee'] + paths[split_folder_index + 2:])
+            if 'concerns' in paths:
+                self.prepended_module_path = root_path + '/'.join(paths[split_folder_index + 1:-1] + ['ee', paths[-1]])
+            else:
+                self.prepended_module_path = root_path + '/'.join([paths[split_folder_index + 1], 'ee'] + paths[split_folder_index + 2:])
         else:
             self.prepended_module_path = root_path + '/'.join(['ee'] + paths[split_folder_index + 1:])
 
