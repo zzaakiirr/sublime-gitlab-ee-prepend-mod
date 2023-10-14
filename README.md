@@ -30,4 +30,5 @@ Plugin for Sublime Text 3 that creates/opens EE module that is prepended to orig
 ```
 
 **Demo**
-TODO
+
+![demo](https://github.com/zzaakiirr/sublime-gitlab-ee-prepend-mod/assets/32741269/f39bb93d-79b8-463d-bda7-37f94963aa36)
